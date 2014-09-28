@@ -17,6 +17,10 @@ Netflam.use Rack::Protection
 ActiveRecord::Base.establish_connection(YAML::load_file('./config/sqlite.yml'))
 $redis = Redis.new(:path => "./tmp/sockets/redis.sock")
 
+# I18n
+I18n.load_path += Dir["./app/locales/*.yml"]
+I18n.default_locale = :en
+
 # Plugins
 Netflam.plugin(Netflam::Render)
 
