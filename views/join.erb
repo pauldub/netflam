@@ -6,7 +6,7 @@
     <% unless @errors.nil? || @errors == 0 %>
         <div class="box red">
         <% @errors.each_pair do |key, value| %>
-            <p><%= key.capitalize %> <%= value[0] %>.</p>
+            <p><%= User.human_attribute_name(key) %> <%= value[0] %>.</p>
         <% end %>
         </div>
     <% end %>
